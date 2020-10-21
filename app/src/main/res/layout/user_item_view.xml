@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.stud.awra.tesktaskuserapi.model_data.User" />
+
+        <variable
+            name="clickListener"
+            type="com.stud.awra.tesktaskuserapi.UserClickListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:onClick="@{(view)->clickListener.onClick(view,user)}">
+
+        <ImageView
+            android:id="@+id/iv_icon_item_user"
+            android:layout_width="?actionBarSize"
+            android:layout_height="?actionBarSize"
+            android:layout_margin="5dp"
+            android:src="@{user.avatar}"
+            android:transitionName="@{String.valueOf(user.id)}" />
+
+        <TextView
+            style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="?actionBarSize"
+            android:layout_marginLeft="?actionBarSize"
+            android:paddingStart="25dp"
+            android:paddingLeft="25dp"
+            android:text="@{user.fullName}"
+            tools:text="Petro Avramyshyn" />
+    </com.google.android.material.card.MaterialCardView>
+</layout>
