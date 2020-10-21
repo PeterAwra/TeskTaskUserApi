@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">TeskTaskUserApi</string>
+    <string name="name_transition">transition_list_item_detail</string>
 </resources>
