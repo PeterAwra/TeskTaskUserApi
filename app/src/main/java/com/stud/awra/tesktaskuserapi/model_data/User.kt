@@ -2,10 +2,15 @@ package com.stud.awra.tesktaskuserapi.model_data
 
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.recyclerview.widget.DiffUtil
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
+@Entity
 class User() : Parcelable {
+    @PrimaryKey
     @SerializedName("id")
     @Expose
     var id = 0
@@ -26,7 +31,17 @@ class User() : Parcelable {
     @Expose
     var avatar: String? = null
 
+    var page = 0
+
     val fullName: String get() = "$firstName $lastName"
+
+    override fun equals(other: Any?): Boolean {
+        return other is User
+                && email == other.email
+                && firstName == other.firstName
+                && lastName == other.lastName
+                && avatar == other.avatar
+    }
 
     constructor(parcel: Parcel) : this() {
         id = parcel.readInt()
@@ -49,6 +64,12 @@ class User() : Parcelable {
     }
 
     companion object CREATOR : Parcelable.Creator<User> {
+        val diffUtil = object : DiffUtil.ItemCallback<User>() {
+            override fun areItemsTheSame(oldItem: User, newItem: User) = oldItem.id == newItem.id
+
+            override fun areContentsTheSame(oldItem: User, newItem: User) = oldItem == newItem
+        }
+
         override fun createFromParcel(parcel: Parcel): User {
             return User(parcel)
         }

@@ -1,13 +1,15 @@
-package com.stud.awra.tesktaskuserapi
+package com.stud.awra.tesktaskuserapi.feathures.list_fragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+import androidx.paging.PagedListAdapter
 import com.stud.awra.tesktaskuserapi.databinding.UserItemViewBinding
+import com.stud.awra.tesktaskuserapi.feathures.list_fragment.UserClickListener
+import com.stud.awra.tesktaskuserapi.feathures.list_fragment.UserItemHolder
 import com.stud.awra.tesktaskuserapi.model_data.User
 
-class UsersAdapter(val users: List<User>, val clickListener: UserClickListener) :
-    RecyclerView.Adapter<UserItemHolder>() {
+class UsersAdapter(private val clickListener: UserClickListener) :
+    PagedListAdapter<User, UserItemHolder>(User.diffUtil) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserItemHolder {
         return UserItemHolder(
             UserItemViewBinding.inflate(
@@ -20,8 +22,6 @@ class UsersAdapter(val users: List<User>, val clickListener: UserClickListener) 
     }
 
     override fun onBindViewHolder(holder: UserItemHolder, position: Int) {
-        holder.bind(users[position])
+        holder.bind(getItem(position))
     }
-
-    override fun getItemCount() = users.size
 }

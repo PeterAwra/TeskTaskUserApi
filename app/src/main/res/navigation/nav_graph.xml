@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listUsersFragment"
-        android:name="com.stud.awra.tesktaskuserapi.ListUsersFragment"
+        android:name="com.stud.awra.tesktaskuserapi.feathures.list_fragment.ListUsersFragment"
         android:label="fragment_list_users"
         tools:layout="@layout/fragment_list_users">
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/userFragment"
-        android:name="com.stud.awra.tesktaskuserapi.UserFragment"
+        android:name="com.stud.awra.tesktaskuserapi.feathures.detail_fragment.UserFragment"
         android:label="UserFragment"
         tools:layout="@layout/fragment_user" >
         <argument

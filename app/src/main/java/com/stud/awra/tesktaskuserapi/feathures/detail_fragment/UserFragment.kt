@@ -1,4 +1,4 @@
-package com.stud.awra.tesktaskuserapi
+package com.stud.awra.tesktaskuserapi.feathures.detail_fragment
 
 import android.graphics.Color
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.transition.MaterialContainerTransform
+import com.stud.awra.tesktaskuserapi.R
 import com.stud.awra.tesktaskuserapi.databinding.FragmentUserBinding
 
 class UserFragment : Fragment() {

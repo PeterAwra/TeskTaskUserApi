@@ -10,7 +10,7 @@
 
         <variable
             name="clickListener"
-            type="com.stud.awra.tesktaskuserapi.UserClickListener" />
+            type="com.stud.awra.tesktaskuserapi.feathures.list_fragment.UserClickListener" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -24,7 +24,7 @@
             android:layout_width="?actionBarSize"
             android:layout_height="?actionBarSize"
             android:layout_margin="5dp"
-            android:src="@{user.avatar}"
+            android:imageUri="@{user.avatar}"
             android:transitionName="@{String.valueOf(user.id)}" />
 
         <TextView

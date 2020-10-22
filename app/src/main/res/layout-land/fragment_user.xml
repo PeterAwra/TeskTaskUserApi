@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.stud.awra.tesktaskuserapi.model_data.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_user_detail_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:transitionName="@string/name_transition">
+
+        <ImageView
+            android:id="@+id/photo_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:imageUri="@{user.avatar}"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/tv_name_cv"
+                style="@style/ContainerTitleDetailUserStyle">
+
+                <TextView
+                    style="@style/LabelTextStyle"
+                    android:text="Name" />
+
+                <TextView
+                    style="@style/TitleTextStyle"
+                    android:text="@{user.firstName}"
+                    tools:text="Peter" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/tv_surname_cv"
+                style="@style/ContainerTitleDetailUserStyle">
+
+                <TextView
+                    style="@style/LabelTextStyle"
+                    android:text="Surname" />
+
+                <TextView
+                    style="@style/TitleTextStyle"
+                    android:text="@{user.lastName}"
+                    tools:text="Peter" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/tv_email_cv"
+                style="@style/ContainerTitleDetailUserStyle">
+
+                <TextView
+                    style="@style/LabelTextStyle"
+                    android:text="Email" />
+
+                <TextView
+                    style="@style/TitleTextStyle"
+                    android:text="@{user.email}"
+                    tools:text="peter.awra@gmail.com" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+

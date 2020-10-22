@@ -1,8 +1,9 @@
-package com.stud.awra.tesktaskuserapi
+package com.stud.awra.tesktaskuserapi.feathures
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
+import com.stud.awra.tesktaskuserapi.R
 
 class MainActivity : AppCompatActivity() {
 
